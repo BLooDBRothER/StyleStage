@@ -1,0 +1,2 @@
+# StyleStage
+Style stage repository
