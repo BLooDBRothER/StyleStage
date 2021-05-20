@@ -723,13 +723,8 @@ nav ul li a:hover:before{
 }
 
 #contribute{
-  /* padding: 2rem 2rem 0 2rem; */
   font-size: 1.5rem;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   font-size: 1.5rem;
   text-align: center;
   position: relative;
@@ -742,6 +737,11 @@ nav ul li a:hover:before{
   justify-content: space-evenly;
   font-size: 1.5rem;
   padding: 2rem;
+  margin: 1rem 0;
+}
+
+#contribute section.container:first-child p:nth-child(2){
+  margin: 2rem 200px;
 }
 
 #contribute section.container:first-child h2{
@@ -749,6 +749,7 @@ nav ul li a:hover:before{
   align-self: center;
   color: var(--fl-blue);
   position: relative; 
+  margin: 0 200px;
 }
 
 #contribute section.container:first-child h2::before{
@@ -813,17 +814,9 @@ nav ul li a:hover:before{
   margin: 1rem 0;
 }
 
-/* #files  a:hover:before{
-  display: none;
-} */
-
-/* #files .container a{
-  padding: 1rem;
-} */
-
 #files{
-  padding: 3rem;
-  width: 100%;
+  padding: 2rem;
+  margin: 2rem;
   border: 1px solid var(--imp-red);
 }
 
@@ -846,23 +839,29 @@ nav ul li a:hover:before{
   position: relative;
 }
 
-/* #files .link-downloadhtml::before{
-  content: '';
-  width: 100px;
-  height: 3px;
-  background-color: var(--violet);
-  position: absolute;
-} */
-
 #files .link-downloadcss:hover, #files .link-downloadhtml:hover, #files .link-codepen:hover{
   background: repeating-linear-gradient(
     45deg,
     transparent 0px,
-    transparent 3px,
-    var(--metal) 3px,
-    var(--metal) 6px
+    transparent 6px,
+    var(--metal) 6px,
+    var(--metal) 12px
   );
+  background-size: 200% 200%;
   color: var(--cadet);
+  animation: barberpole 5s linear infinite
+}
+
+@keyframes barberpole {
+  0%{
+    background-position: 0% 0%;
+  }
+  50%{
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 #files .link-downloadcss::before, #files .link-downloadhtml::before, #files .link-codepen::before{
@@ -933,18 +932,8 @@ nav ul li a:hover:before{
     transparent 3px,
     var(--violet) 3px,
     var(--violet) 6px)
+    }
   }
-
-  /* 100%{
-    width: 80px;
-    background: repeating-linear-gradient(
-    45deg,
-    transparent 0px,
-    transparent 3px,
-    var(--violet) 3px,
-    var(--violet) 6px)
-  } */
-}
 
 /* ------------------------------------------------------------ Media Query----------------------------------------*/
 
@@ -1045,6 +1034,38 @@ nav ul li a:hover:before{
     align-self: flex-start;
     margin-left: 1rem;
     font-size: 2rem;
+  }
+
+  #files .container{
+    flex-direction: column;
+  }
+ 
+}
+
+@media (max-width: 690px){
+  #contribute::before{
+    border-top: 100px solid var(--violet);
+    border-left: 100px solid transparent;
+  }
+  
+  #contribute::after{
+    border-bottom: 100px solid var(--violet);
+    border-left: 100px solid transparent;
+  }
+  
+  #contribute section.container:first-child::before{
+    border-top: 100px solid var(--violet);
+    border-right: 100px solid transparent;
+  }
+  
+  #contribute section.container:first-child::after{
+    border-bottom: 100px solid var(--violet);
+    border-right: 100px solid transparent;
+  }
+
+  #contribute section.container:first-child p:nth-child(3){
+    margin: 2rem;
+    width: 80%;
   }
 }
 
