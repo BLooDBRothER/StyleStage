@@ -1144,7 +1144,7 @@ nav ul li a:hover:before{
   #about .container:first-child h2{
     align-self: flex-end;
     margin: 0 2rem 0 100px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 1rem 0;
   }
 
@@ -1201,6 +1201,9 @@ nav ul li a:hover:before{
     border-bottom: 25px solid transparent;
   }
 
+  #contribute section.container:first-child h2{
+    font-size: 2rem;
+  }
 
 }
 
