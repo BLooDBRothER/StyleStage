@@ -737,7 +737,7 @@ nav ul li a:hover:before{
   justify-content: space-evenly;
   font-size: 1.5rem;
   padding: 2rem;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
 }
 
 #contribute section.container:first-child p:nth-child(2){
@@ -832,11 +832,14 @@ nav ul li a:hover:before{
   padding: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: var(--fogra);
   font-weight: bold;
   border-radius: 2rem;
   margin: 1rem 100px;
   position: relative;
+  width: 250px;
+  text-align: center;
 }
 
 #files .link-downloadcss:hover, #files .link-downloadhtml:hover, #files .link-codepen:hover{
@@ -1037,6 +1040,7 @@ nav ul li a:hover:before{
   }
 
   #files .container{
+    flex-wrap: nowrap;
     flex-direction: column;
   }
  
@@ -1063,9 +1067,34 @@ nav ul li a:hover:before{
     border-right: 100px solid transparent;
   }
 
-  #contribute section.container:first-child p:nth-child(3){
+  #contribute section.container:first-child {
+    padding: 20px 2rem 2rem 2rem;
+  }
+
+  #contribute section.container:first-child h2{
+    font-size: 3rem;
+  }
+
+  #contribute section.container:first-child p:nth-child(2){
     margin: 2rem;
-    width: 80%;
+  }
+
+  #contribute section.container:nth-child(1){
+    font-size: 1.3rem;
+  }
+
+  #contribute section.container:nth-child(2){
+    font-size: 1.2rem;
+  }
+
+  #files{
+    font-size: 1rem;
+    padding: .5rem 0;
+    margin: 2rem .5rem;
+  }
+
+  #files .link-downloadcss, #files .link-downloadhtml, #files .link-codepen{
+    width: 150px;
   }
 }
 
@@ -1172,6 +1201,7 @@ nav ul li a:hover:before{
     border-bottom: 25px solid transparent;
   }
 
+
 }
 
 @media (max-width:380px){
@@ -1213,6 +1243,105 @@ nav ul li a:hover:before{
     height: 50px;
     width: 60%;
     font-size: .8rem;
+  }
+
+  #contribute::before{
+    border-top: 50px solid var(--violet);
+    border-left: 50px solid transparent;
+  }
+  
+  #contribute::after{
+    border-bottom: 50px solid var(--violet);
+    border-left: 50px solid transparent;
+  }
+  
+  #contribute section.container:first-child::before{
+    border-top: 50px solid var(--violet);
+    border-right: 50px solid transparent;
+  }
+  
+  #contribute section.container:first-child::after{
+    border-bottom: 50px solid var(--violet);
+    border-right: 50px solid transparent;
+  }
+
+  #contribute section.container:first-child h2{
+    font-size: 2rem;
+  }
+
+  #contribute section.container:first-child {
+    padding: 0px 2rem 2rem 2rem;
+  }
+
+  #contribute>section a {
+    white-space: pre-wrap;
+  }
+
+  #files .link-downloadcss, #files .link-downloadhtml, #files .link-codepen{
+    width: 100px;
+  }
+
+  #files .link-downloadcss::before, #files .link-downloadhtml::before, #files .link-codepen::before{
+    width: 40px;
+    left: -40px;
+  }
+  
+  
+  #files .link-downloadcss::after, #files .link-downloadhtml::after, #files .link-codepen::after{
+    width: 40px;
+    right: -40px;
+  }
+  
+  @keyframes chgclrbf{
+    50%{
+      width: 20px;
+      background: repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 3px,
+      var(--violet) 3px,
+      var(--violet) 6px)
+    }
+  
+  
+    100%{
+      width: 40px;
+      background: repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 3px,
+      var(--imp-red) 3px,
+      var(--imp-red) 6px)
+    }
+  }
+
+  @keyframes chgclraf{
+    50%{
+      width: 20px;
+      background: repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 3px,
+      var(--violet) 3px,
+      var(--violet) 6px)
+    }
+  
+  
+    100%{
+      width: 40px;
+      background: repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 3px,
+      var(--imp-red) 3px,
+      var(--imp-red) 6px)
+    }
+  }
+
+  #files .link-downloadcss, #files .link-downloadhtml, #files .link-codepen{
+    padding: .5rem;
+    font-size: .8rem;
+    width: 110px;
   }
 }
 
