@@ -66,6 +66,23 @@ a{
   white-space: nowrap;
 }
 
+a:hover:before{
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00FFF3;
+  animation: brd-top 1s ease;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /*  --------------------------------------- HEADER ----------------------------------------- */
 
 .skip-link{
@@ -281,7 +298,6 @@ nav{
 nav ul{
   padding: 0;
   margin: 0;
-  list-style: none;
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -307,6 +323,10 @@ nav ul li a:hover{
 }
 
 nav ul li a:hover:before{
+  display: none;
+}
+
+nav ul li a:hover:after{
   content: '\27A3';
   position: absolute;
   left: -3rem;
@@ -366,17 +386,6 @@ nav ul li a:hover:before{
   padding-top: .5rem;
 }
 
-#about .container p a:hover:before{
-  content: '';
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #00FFF3;
-  animation: brd-top 1s ease;
-}
-
 /* ------------------------------------------------------------ About Section 1st child----------------------------------------*/
 
 #about .container:first-child::before{
@@ -401,8 +410,6 @@ nav ul li a:hover:before{
   position: absolute;
 }
 
-
-
 #about .container:first-child p{
   line-height: 3rem;
 }
@@ -415,8 +422,6 @@ nav ul li a:hover:before{
     width: 100%;
   }
 }
-
-
 
 #about .container:first-child>p{
   margin: 2rem 0;
@@ -452,17 +457,6 @@ nav ul li a:hover:before{
   padding-top: .5rem;
 }
 
-#about .container:first-child blockquote a:hover:before{
-  content: '';
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--fl-blue);
-  animation: brd-top 1s ease;
-}
-
 /* ---------------------------------------------------- About Section 2nd child -----------------------------------------------------------*/
 
 #about .container:nth-child(2)::before{
@@ -494,7 +488,6 @@ nav ul li a:hover:before{
 }
 
 #about .container:nth-child(2) ul{
-  list-style: none;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -534,17 +527,6 @@ nav ul li a:hover:before{
   color: var(--fl-blue);
   position: relative;
   padding-top: .5rem;
-}
-
-#guidelines .container p a:hover:before{
-  content: '';
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #00FFF3;
-  animation: brd-top 1s ease;
 }
 
 #guidelines .container h2{
@@ -664,6 +646,12 @@ nav ul li a:hover:before{
   border-bottom: 50px solid transparent;
 }
 
+#guidelines .link-guidelines:hover:before{
+  width: 0;
+  animation: none;
+  background-color: transparent;
+}
+
 #guidelines .link-guidelines::after{
   content: '';
   width: 0;
@@ -776,17 +764,6 @@ nav ul li a:hover:before{
   color: var(--mid-aqua);
   position: relative;
   padding-top: .5rem;
-}
-
-#contribute>section  a:hover:before{
-  content: '';
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #00FFF3;
-  animation: brd-top 1s ease;
 }
 
 #contribute section.container:nth-child(2){
@@ -936,7 +913,154 @@ nav ul li a:hover:before{
     var(--violet) 3px,
     var(--violet) 6px)
     }
-  }
+}
+
+/*  ------------------------------------------------- Profile -------------------------------------------*/
+
+.profile{
+  min-height: 150px;
+  height: 30vh;
+  background-color: var(--metal);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile .container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+#profile-title, .profile .container ul, .profile .container a{
+  align-self: center;
+  justify-self: center;
+}
+
+#profile-title, .profile .container>a{
+  font-size: 1.7rem;
+  background-color: var(--fogra);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  border: 2px solid var(--violet);
+}
+
+.profile .container ul{
+  background-color: var(--fogra);
+  height: 100%;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.profile .container ul li span:first-child{
+  color: var(--violet);
+}
+
+.profile .container ul li a{
+  color: var(--mid-aqua);
+  position: relative;
+  padding-top: .5rem;
+}
+
+.profile .container a{
+  color: var(--fl-blue);
+}
+
+.profile .container a:hover{
+  color: var(--imp-red);
+}
+
+/* ------------------------------------------------------------ Featured Styles----------------------------------------*/
+
+#styles{
+  min-height: 70vh;
+  background-color: var(--metal);
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+#styles .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#styles .container h2{
+  font-size: 3rem;
+  align-self: center;
+  position: relative;
+}
+
+#styles .container h2::before{
+  content: '';
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--cadet);
+}
+
+#styles .container .features{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+#styles .container .features li{
+  background-color: var(--fogra);
+  padding: 1rem 0 0 0;
+  border: 1px solid var(--violet);
+  margin: 1rem;
+}
+
+#styles .container .features li>span{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#styles .container .features li a{
+  color: var(--imp-red);
+  padding: 1rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+#styles .container .features li a:hover{
+  color: var(--mid-aqua);
+}
+
+#styles .container .features li>span span:nth-child(2){
+  border-top: 2px solid var(--fl-blue);
+  color: var(--silver-plate);
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.link-allstyles{
+  font-size: 1.7rem;
+  background-color: var(--fogra);
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--violet);
+  color: var(--fl-blue);
+  align-self: center;
+}
+
+.link-allstyles:hover{
+  color: var(--imp-red);
+}
 
 /* ------------------------------------------------------------ Media Query----------------------------------------*/
 
@@ -955,6 +1079,18 @@ nav ul li a:hover:before{
   }
   #about .container:first-child blockquote{
     font-size: 1.3rem;
+  }
+
+  .profile{
+    height: 50vh;
+    min-height: 400px;
+  }
+  .profile .container{
+    grid-template-columns: 100%;
+  }
+  #profile-title, .profile .container>a{
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 }
 
@@ -1345,6 +1481,18 @@ nav ul li a:hover:before{
     padding: .5rem;
     font-size: .8rem;
     width: 110px;
+  }
+
+  .profile{
+    font-size: 1rem;
+  }
+  #profile-title, .profile .container>a{
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  #styles .container h2{
+    font-size: 2rem;
   }
 }
 
