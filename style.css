@@ -60,6 +60,10 @@ body {
   color: var(--silver-plate);
 }
 
+h1{
+  font-family: var(--mate-cs);
+}
+
 h2{
   font-family: var(--raledots);
   font-weight: 300;
