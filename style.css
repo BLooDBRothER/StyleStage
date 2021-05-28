@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Raleway+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
 
 *,
 *::before,
@@ -15,6 +18,9 @@
   --imp-red:#FF0A2F;
   --silver-plate:#C5C6C7;
   --violet: #7A00FD;
+  --raledots: 'Raleway Dots', cursive;
+  --mate-cs: 'Mate SC', serif;
+  --quat: 'Quattrocento', serif;
 }
 
 /* width */
@@ -37,13 +43,7 @@
   background: var(--cadet); 
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body,h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
@@ -60,10 +60,16 @@ body {
   color: var(--silver-plate);
 }
 
+h2{
+  font-family: var(--raledots);
+  font-weight: 300;
+}
+
 a{
   text-decoration: none;
   z-index: 10;
   white-space: nowrap;
+  font-family: var(--mate-cs);
 }
 
 a:hover:before{
@@ -75,6 +81,10 @@ a:hover:before{
   left: 0;
   background-color: #00FFF3;
   animation: brd-top 1s ease;
+}
+
+p{
+  font-family: var(--quat);
 }
 
 ul{
@@ -120,16 +130,16 @@ header .link-github:hover{
   color: var(--imp-red);
 }
 
-header .link-github:hover span svg path{
+.link-github:hover svg path{
   fill: var(--imp-red);
 }
 
-header .link-github span{
+.link-github{
   display: flex;
   align-items: center;
 } 
 
-header .link-github span svg path{
+.link-github svg path{
   fill: var(--fogra);
 } 
 
@@ -233,6 +243,10 @@ header .container h1:hover:after{
   }
 }
 
+header .container h2{
+  font-family: var(--mate-cs);
+}
+
 .container svg{
   width: 1.2rem;
   height: 1.2rem;
@@ -254,11 +268,14 @@ header p{
 
 header p a{
   color: var(--fl-blue);
-  z-index: 10;
 }
 
 header p a:hover{
   color: var(--imp-red);
+}
+
+header p a:hover:before{
+  display: none;
 }
 
 
@@ -977,18 +994,14 @@ nav ul li a:hover:after{
 
 /* ------------------------------------------------------------ Featured Styles----------------------------------------*/
 
-#styles{
-  min-height: 70vh;
-  background-color: var(--metal);
-  padding: 1rem 0;
-  font-size: 1.5rem;
-}
-
 #styles .container{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  background-color: var(--metal);
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  min-height: 70vh;
 }
 
 #styles .container h2{
@@ -1019,6 +1032,7 @@ nav ul li a:hover:after{
   padding: 1rem 0 0 0;
   border: 1px solid var(--violet);
   margin: 1rem;
+  box-shadow: var(--violet) 0px 10px 30px -10px;
 }
 
 #styles .container .features li>span{
@@ -1060,6 +1074,72 @@ nav ul li a:hover:after{
 
 .link-allstyles:hover{
   color: var(--imp-red);
+}
+
+/* ------------------------------------------------------------ Footer----------------------------------------*/
+
+.page-footer .container{
+  min-height: 50vh;
+  display: flex;
+  font-size: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.page-footer .container p a{
+  color: var(--mid-aqua);
+  position: relative;
+  padding-top: .5rem;
+}
+
+.page-footer .container ul{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+footer .link-twittercontact, footer .link-github, footer .link-rss, footer .link-support{
+  position: absolute;
+  color: var(--metal);
+  background-color: var(--fl-blue);
+  padding: .8rem;
+  font-size: 1.2rem;
+}
+
+footer .link-twittercontact{
+  top: 0;
+  left: 0;
+  border-radius: 0 1rem 1rem 0;
+}
+
+footer .link-twittercontact:hover, footer .link-github:hover, footer .link-rss:hover, footer .link-support:hover{
+  background-color: transparent;
+  color: var(--imp-red);
+}
+
+footer .link-github{
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem 0 0 1rem;
+}
+
+footer .link-rss{
+  bottom: 0;
+  right: 0;
+  border-radius: 1rem 0 0 1rem;
+}
+
+footer .link-support{ 
+  border-radius: 0 1rem 1rem 0;
+  bottom: 0;
+  left: 0;
 }
 
 /* ------------------------------------------------------------ Media Query----------------------------------------*/
@@ -1493,6 +1573,14 @@ nav ul li a:hover:after{
 
   #styles .container h2{
     font-size: 2rem;
+  }
+
+  .page-footer .container{
+    font-size: 1rem;
+  }
+
+  footer .link-twittercontact, footer .link-github, footer .link-rss, footer .link-support{
+    font-size: .8rem;
   }
 }
 
