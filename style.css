@@ -60,6 +60,15 @@ body {
   color: var(--silver-plate);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::after, *::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 h1{
   font-family: var(--mate-cs);
 }
@@ -936,6 +945,11 @@ nav ul li a:hover:after{
   align-self: center;
   justify-self: center;
   margin: 2.5rem 0;
+  color: var(--fl-blue);
+}
+
+#profile-title{
+  color: var(--silver-plate);
 }
 
 #profile-title, .profile .container>a, .link-allstyles{
